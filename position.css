@@ -1,0 +1,48 @@
+.item-1 {
+  background-color: rgb(31, 113, 85);
+}
+.item-2 {
+  background-color: rgb(103, 131, 19);
+}
+.item-3 {
+  background-color: rgb(127, 197, 255);
+}
+.item-4 {
+  background-color: rgb(176, 132, 74);
+}
+.item-5 {
+  background-color: rgb(112, 157, 164);
+}
+.item-6 {
+  background-color: rgb(149, 38, 157);
+}
+.item-7 {
+  background-color: rgb(43, 163, 22);
+}
+.item-8 {
+  background-color: rgb(174, 25, 63);
+}
+.item-9 {
+  background-color: rgb(124, 214, 124);
+}
+.item-10 {
+  background-color: rgb(110, 130, 149);
+}
+.item-11 {
+  background-color: rgb(99, 151, 108);
+}
+.item-12 {
+  background-color: rgb(115, 111, 148);
+}
+
+/* CSS POSITION */
+body {
+  overflow-x: hidden;
+}
+.item-1 {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  /* bottom: 0px; */
+  /* left: 0px; */
+}

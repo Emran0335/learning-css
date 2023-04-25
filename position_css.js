@@ -1,290 +1,114 @@
-hello everybody welcome back to web dev
-simplified in today's video I'm going to
-be teaching you everything you need to
-know about CSS positioning so by the
-time that this video is over you're
-going to be positioning elements like a
-CSS God let's get started now to
-demonstrate all five of the different
-CSS properties for position I have a
-simple example set up we have a parent
-element as well as three child's inside
-of that parent element and right now
-there's absolutely no position styles
-being applied to them only these default
-styles for coloring it and if we come in
-here and we want to inspect one of these
-elements to figure out how the position
-is being applied by default we can go to
-the computed tab we can search for
-position and if we see right here our
-position property is set to static by
-default and static is the default
-position that all of your HTML elements
-will have when they enter onto the page
-and essentially all static visitors
-Union does is this says that it should
-follow the other elements in the
-document flow so whatever comes first in
-our HTML for example child number one
-will be above child number two and so on
-so static positioning is just like how
-your HTML works when you type it out and
-it's what you're most used to the next
-CSS position that we want to cover is
-relative position and this works almost
-exactly the same as static positioning
-so if we go in here and we want to
-change our green child here child number
-one to be positioned relative and we
-save that and you'll notice absolutely
-nothing over here has changed and that's
-because relative position acts exactly
-like static positioning but it allows
-you to do four specific things that
-static positioning does not and that is
-that you can change the top left right
-and bottom of this element so let me
-just show you an example of that we can
-come in here and we can change the left
-for example to 10 pixels if we save that
-you see the element moves itself over 10
-pixels it even overflows its parent by
-10 pixels on the right side and that's
-because relative allows you to actually
-change the position of the element
-relative to where it normally would be
-in the document flow if it was
-statically positioned so as you can see
-normally this one would take up this
-space here inside of the parent but
-because a little left 10 it's moved over
-10 pixels and for example if we put top
-here to be 10 and save it you see that
-it actually overflows the elements below
-it because relative position when you
-apply top left
-and bottom it actually takes that
-element out of the document flow and
-moves it down or left or right or up
-those 10 pixels that you specified and
-the reason that this element 2 & 3 are
-not actually being pushed down when this
-top element is being pushed down is
-because like I said it was removed from
-the document flow so it no longer works
-just like a statically positioned
-element if you can see here that the
-position where one normally would be is
-taken up and that is reserved for where
-one is and the actual element 1 is just
-moved by these top left right and bottom
-elements that we applied to it in
-general you're almost never going to be
-using top left right and bottom on a
-position:relative element because all
-that does is move your element out of
-the document flow and it becomes really
-difficult to style things around it
-since as you can see our element 2 is
-now no longer in line with 1 so we would
-have to also position the relative
-number 2 exactly the same and then we'd
-have to do the exact same thing with
-number 3 and so on and it gets really
-confusing when you start using that so
-in general position relative is not
-actually used for using top left right
-and bottom the next element that we want
-to talk about for position is absolute
-and that one most definitely gets used
-with top left right and bottom so let's
-put an absolute on here remove our top
-save everything and you can see that
-already things have changed drastically
-from before when we had no position this
-is with no position and then position
-absolute and as you can see the document
-actually completely ignores this one
-element right here it just pretends like
-it was completely deleted and for
-example if we go into our index.html
-here and we delete this one element and
-save it all of the rest of our elements
-work exactly the same as before we add
-it back in you see nothing else moves
-except for that one element and that's
-because position absolute completely
-removes the element from the document
-flow and everything else renders as if
-that absolute element didn't even exist
-at all and that is a crucially important
-this makes position absolute really
-useful for when you want to stick
-something in a specific position but you
-don't want anything else to move around
-it and as I mentioned position absolute
-allows you to do top left right and
-bottom to it and you'll notice if we put
-a top on here of let's just say 10
-pixels something really weird is gonna
-happen if we save that you see that this
-element is actually 10 pixels from the
-very top of our screen if we set this to
-0 and save you can really see that it's
-just
-the very top of the screen but why is
-that shouldn't it be down here zero
-pixels from itself and that is incorrect
-because that's what relative position
-does absolute position absolutely
-positions an element inside of some
-parent container that it can reference
-so you would think it would reference
-this parent but this parent is
-positioned static which means it can't
-have anything else positioned absolutely
-or relatively to it in order to change
-an element so that you can position
-something absolutely or relatively to it
-you need to use one of the other
-positioning elements of either relative
-absolute sticky or fixed in order to
-make an element position absolutely
-inside of it so if we change parent here
-to position relative which this is the
-most common use case for position
-relative you'll see now our absolute
-position element is relative to the
-position relative parent and this is
-where relative is really useful it's
-when you want to absolutely position
-something inside of it you need to make
-sure that element has positioned
-relative otherwise that element will
-just fall back to the next relatively
-position parent or all the way back to
-the HTML element itself so this is where
-relative and absolute play really nicely
-together
-so just to reiterate the positions we've
-gone over already static is the default
-relative is exactly the same as static
-but you can relatively position it to
-its self using top left bottom and right
-and then absolute is just like relative
-in the fact that you can position it
-relative using top left right and bottom
-but it completely removes it from the
-document flow so that all the other
-elements ignore it completely and
-relative and absolute play together
-nicely because any element that is
-relatively positioned can have
-absolutely position elements inside of
-it
-that'll be relative to that relative
-position element and that works for
-every position not just relative we
-could change this here to be absolute as
-well and you can see still that one
-element is relative to the parent
-because the parent has some other
-position than static and that's really
-important anytime you have a position
-other than static absolute elements
-we'll use that as its parent that it's
-absolutely positioned inside of so let's
-remove that because we don't actually
-want this we can keep it as relative and
-now we can move on to the next type of
-positioning which is fixed positioning
-which is very similar to absolute
-positioning but there's
-some caveats regarding it so let's
-change this to be position fixed here
-and save it and you see immediately it
-completely ignores this relative
-position parent and moves all the way to
-the top and that's because fixed
-position elements are always fixed
-positioned based on the entire HTML
-element it has nothing to do with
-parents also something really unique
-about fixed position elements is they
-stay in the same place when you scroll
-so let's make our page very large we're
-going to change this I hate here to 200
-view heights so it'll be able to scroll
-and if we save that we can scroll down
-you see that this one element still
-sticks to the very top of our page
-because it's got top of zero for example
-if we put the right to zero as well and
-say that you can see it sticks now to
-the top right no matter how far we
-scroll but absolute does not work that
-way if we change this to absolute you
-can see it's in the top right here but
-if we scroll you can see it stays there
-it doesn't actually move when you scroll
-and that's the big difference between
-fixed and absolute fixed moves with the
-page as you scroll and is always in the
-same exact position on the page and also
-it positioned itself based on the entire
-HTML page and not just the parent that
-has the correct positioning relative
-absolute etc on it and those are the
-real big differences between absolute
-and fixed and now the last position that
-we need to cover is position sticky and
-I'm not going to go super in-depth in
-position sticky because I have an entire
-video covering it so if you want to
-check that out make sure you check the
-description and the cards for this video
-to find that sticky position video but
-essentially sticky position is a
-combination of both relative position
-and fixed position into one so let's go
-down here to our child one we're gonna
-make this sticky position I'll get rid
-of the right we'll just have top here
-and if we say that you'll see it looks
-just normal just like it was relatively
-positioned but as we scroll down as soon
-as this element hits the top of our page
-since we have our top set to zero it'll
-become fixed position now and as you can
-see as we scroll it stays fixed to the
-top of our page with that top of zero
-and that's really with power of sticky
-position is by default it's relative but
-as soon as it Scrolls outside of the
-page it becomes fixed position and
-that's it position in CSS is really that
-easy you have the default static
-position you have the relative position
-which works just like static but you can
-move it based on itself absolute which
-works just
-like relative but it's moved based on
-its parent element that is using
-position relative absolute sticky are
-fixed and we also have sticky position
-works works just like fixed and relative
-and lastly fixed position which allows
-you to put an element on the page and
-it'll stay there no matter where the
-user moves to with the scroll wheel so I
-really hope you guys enjoyed this video
-and have a little bit more understanding
-of the different positions inside of CSS
-if you enjoyed the video make sure to
-subscribe and leave a comment down below
-letting me know what other videos you
-want me to make in the future thank you
-very much for watching and have a good
-day
+ To start using CSS positions, we first need some elements in our HTML. All I have is a div with the class of container and 12 items nested inside of it. Each item is a div with the class of item and item-1, 2, 3 and so on. When I save, we see we actually have a grid. This is because I have some base tiles and a separate CSS file. None of this is relevant to CSS positioning. You don't need a container with 12 items and you don't need a grid to start using the CSS positioning properties. All of this is just for demonstration purposes. In a fresh CSS file, I'll select the first item(item-1) in our grid by its class name and give it the position property. In total there are five position values- absolute, relative, fixed, sticky and static. When I set the position on our item-1 to absolute, we see that item-1 from our grid disappeared.
+ /* position properties */
+ .item-1 {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    /* bottom: 0px; */
+    /* left: 0px; */
+} 
+ We have one, three, four, five and so on. But we don't see item-2. And this is because it's hidden underneath item-1. To move item-1, we can use the top, right, bottom and left properties. These properties are unlocked. When we assign a position property to an element, if I give the top property the value of 0px, we see now our item-1 is positioned at the top of the page. And also the reason, we're missing an item from our grid. This is because when we set item-1 to have a position of absolute, item-1 got removed from the grid. Actually it got removed from the entire document. Elements that are assigned a position of absolute are removed from the document. No space is created for them and other elements will behave as if that element never existed. If I set left to 0px, now our item-1 is on the top left corner. If I set the bottom to 0px, nothing happens. This is because it doesn't make sense to have both a top and a bottom. I can comment out the top property and now with the bottom of 0px, we see that the element is positioned at the bottom left corner. The same goes for the left and right properties. I use one of them but not both at the same time. I'll comment out the left property and set the right property to 0px. I'll also comment out the bottom property and set the top property to 0px. Now our item-1 is positioned at the top right corner. But what happens if I give our top and red properties some negative numbers. I'll set both to (-50px).
+ .item-1 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    /* bottom: 0px; */
+    /* left: 0px; */
+} 
+ And now our item-1 is half visible. This is pretty cool. But we've got some horizontal scrolling. I can select the body and give it the Overflow X of hidden.
+ body {
+    overflow-x: hidden;
+ }
+ And now the horizontal scrolling is gone. Did you notice? Whenever we were defining values on the top, right, bottom and left properties that those values were positioning item-1 relative to the entire page. Minus 50 pixels on the top and right properties places item-1 at the top right corner of the entire page. If I wanted item-1 to position itself relative to its parent, then we need to select the parent and give it a position. Any position value will work except static.
+ .container {
+    position: relative;
+ }
+ Because static is the default value. I'll set the position to relative and now we see item-1 is being positioned relative to the parent instead of the entire page. The way this works is over on the HTML. Item-1 is asking the parent whether it has a position property. If not, then it asks the next parent and the next and then next until it finds one with the position property defined and if it doesn't find one, then it defaults to being positioned relative to the HTML element. Now that item-1 is being positioned relative to the container. It's stacking itself above item-5.
+ .item-1 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    /* bottom: 0px; */
+    /* left: 0px; */
+    z-index: -1;
+} 
+ If we wanted item-1 to be layered underneath item-5. What we can do is use the Z-index property and set it to -1. Back on my client's website(personal information), I give the planet the position of absolute.
+ .bg-planet1 {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.3;
+    top: -350px;
+    right: -650px;
+ }
+ The planet is now removed from the document but is stacking above other elements. I use the Z-index property to layer the planet underneath the other elements. Also I give the planet an opacity of 0.3. Because the planet is way too bright. I played around with the top and right properties until I was happy with the position.
+ body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    word-spacing: 1.4px;
+    font-family: #465830;
+    font-size: 24px;
+    background-color: #e5e5e5;
+    color: white;
+    overflow-x: hidden;
+ }
+ And I also added an overflow-X of hidden on the body to remove the horizontal scroll bar. And finally I repeated the same process for other images.
+ 
+ // Static
+ Now we will talk about Static & Relative. If I select item-1 and give it the position of static, we see nothing happens.
+ .item-1 {
+    position: static;
+    // top: 0px;
+    top: 100px;
+ }
+ If I give it a top property of 0px, nothing happens. If I set it to 1000px, still nothing happens. Nothing is happening because static elements not have access to the top, right, bottom and left properties. Nor do they have access to the Z-index property.
+ //Relative
+ .item-1 {
+    position: relative;
+    // top: 0px;
+    top: 100px;
+    left: 100px;
+ }
+ On the other hand, if I set item-1 to have a position of relative, we see again nothing happens but unlike the static position relative has access to the top, right, bottom, left and Z-index properties. If I give it a top property of 0px, it doesn't move. However, if I set it to 100px, we see it pushed it 100px away from the Top. If I give it a left property of 100px, we see now it pushed it 100px away from the left. Unlike the position of absolute, elements with the position of relative remain in the normal flow of the document. Use relative when you want to keep your element in the normal flow of the document. And use absolute when you want to remove your element from the normal flow of the document.
+ 
+ .footer-child svg {
+    position: relative;
+    margin-left: 150px;
+ }
+ On the footer, I want to push this animation slightly towards the right. Normally I would just use a margin left. But in this case, I can't because I set the width and height with percentages. And if I use margins, the animation would shrink. So what I can do is give the animation the position of relative and use the left property to push it slightly to the right. Without it, it is shrinking.
+ 
+ // Fixed & Sticky
+ The two final positions are fixed and sticky. They both stick an element into position. But they do it slightly differently. Fixed actually behaves very similarly to the absolute position. Like absolute, elements with the position of fixed are removed from the document. So when I set item-1 to a position of fixed, we get the same behavior.
+ .item-1 {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+ }
+ As we did when we were working with absolutes. Item-1 was removed from the entire document and is currently layered on top of item-2. Which is why we don't see item-2. However one area where fixed is different from absolute is when we start scrolling we see item-1 is now following us when we're scrolling the page. The second area where fixed differs from absolute is unlike the absolute element a fixed element is always positioned relative to the HTML element. I can set item-1 with a top of 0px and this will stick it to the top of the page.
+ .item-1 {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    border-radius: 0;
+    width: 100%;
+    z-index: 1;
+ }
+ I'll also give it a left of 0px, a border-radius of 0px, a width of 100% and a z-index of 1. Guess what we now have a header. I can also have it be a bottom Header by replacing top with bottom and now we have a bottom header.
+ .item-1 {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    border-radius: 0;
+    width: 100%;
+    z-index: 1;
+ }
+
+ // Sticky
+ The sticky position works similarly to both relative and fixed. I'll select item-5 and give it the position of sticky. We see nothing happened and also if I scroll the page, nothing is happening. But if I give it a top of 0px and start scrolling now item-5 is scrolling down with us until it hits the end of the container.
+ .item-5 {
+    position: sticky;
+    // top: 0px;
+    top: 50px;
+ }
+ Sticky only works when we define a top property. The value we put in the top property represents the space before the element. We'll start scrolling down with the page. If I set top to 50px, now the space between the element and the top of the viewport needs to be 50px before the element starts sticking to it. The client requested a bottom header indicating that the website is still under development and also requested that the text and the builder section stick to the page when scrolling. To create the heading, I add a div with the class of bottom heading. I give it the position of fixed. The bottom of 0px, the left of 0px, the width of 100%, a background-color, a color and is at z-index of 1. Then for this section to stick, when scrolling, all I have to do is give it the position of sticky and also give it a top property. After all these changes were made, I had a happy client and he left me a nice review on upwork. This is pretty much everything you need to know to start positioning things. 
 
